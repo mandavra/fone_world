@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "vercel-build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "node server.js",
-    "start": "npm run start:all",
+    "start": "node backend/server.js",
     "start:all": "concurrently -k -n SERVER,WEB -c green,cyan \"npm:server\" \"npm:dev\""
   },
   "dependencies": {
