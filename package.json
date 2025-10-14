@@ -2,16 +2,14 @@
   "name": "fone_world",
   "private": true,
   "version": "0.0.0",
- "engines": {
-    "node": "18.x"
-  },
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "vercel-build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "node backend/server.js",
+    "start": "node server.js",
     "start:all": "concurrently -k -n SERVER,WEB -c green,cyan \"npm:server\" \"npm:dev\""
   },
   "dependencies": {
