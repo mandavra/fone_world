@@ -84,7 +84,7 @@ const Footer = () => {
                 const form = e.currentTarget;
                 const email = form.querySelector('input[name="subscribeEmail"]').value;
                 try {
-                  const resp = await fetch('http://localhost:4001/api/subscribe', {
+                  const resp = await fetch('https://foneworldbackend.vercel.app/api/subscribe', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email })
