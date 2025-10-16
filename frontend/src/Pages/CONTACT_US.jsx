@@ -160,7 +160,7 @@ const CONTACT_US = () => {
                 // Optional image validation already performed on change; include if present
                 try {
                   setIsSubmitting(true);
-                  const resp = await fetch('https://foneworldbackend.vercel.app/api/contact', {
+                  const resp = await fetch('http://localhost:4001/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
