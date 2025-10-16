@@ -10,6 +10,17 @@ app.use(cors());
 // Increase JSON limit to allow base64 images from contact form
 app.use(express.json({ limit: '100mb' }));
 
+// Lightweight health check and root route to avoid 404s on '/'
+app.get('/', (req, res) => {
+  return res.status(200).json({ ok: true, service: 'foneworld-backend', time: new Date().toISOString() });
+});
+
+// Avoid noisy 404s for common browser favicon requests
+app.get(['/favicon.ico', '/favicon.png'], (req, res) => {
+  // 204 No Content is appropriate for missing favicon
+  return res.status(204).end();
+});
+
 function renderEmail(title, rows) {
   const rowsHtml = rows
     .map(([label, value]) => `
@@ -192,9 +203,14 @@ app.post('/api/subscribe', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
-});
+// For local/dev run the server, for Vercel export the app
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server listening on http://localhost:${PORT}`);
+  });
+}
+
+export default app;
 
 
 
