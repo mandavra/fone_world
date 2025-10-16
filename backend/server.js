@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 
 const app = express();
 // Prefer env var, fallback to previous default
-const PORT = Number(process.env.PORT) || 4001;
+
 
 app.use(cors());
 // Increase JSON limit to allow base64 images from contact form
@@ -37,8 +37,8 @@ function renderEmail(title, rows) {
 }
 
 // Configure transporter with Gmail credentials via env vars
-const gmailUser = process.env.GMAIL_USER || 'mandavra12@gmail.com';
-const gmailPass = (process.env.GMAIL_APP_PASSWORD || 'qniq bysx gggh npyn').replace(/\s+/g, '');
+const gmailUser = 'mandavra12@gmail.com';
+const gmailPass =  'qniq bysx gggh npyn'.replace(/\s+/g, '');
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
@@ -192,8 +192,8 @@ app.post('/api/subscribe', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
+app.listen(4001, () => {
+  console.log(`Server listening on http://localhost:${4001}`);
 });
 
 
