@@ -30,7 +30,7 @@ function renderEmail(title, rows) {
         </table>
       </div>
       <div style="padding:12px 16px;font-size:12px;color:#6b7280;background:#f9fafb;border-top:1px solid #e5e7eb;">
-        Sent from Fone World website • Contact: <a href="mailto:drex.haywards@gmail.com" style="color:#2563eb;text-decoration:none;">drex.haywards@gmail.com</a>
+        Sent from Dr.ex Haywards Heathwebsite • Contact: <a href="mailto:drex.haywards@gmail.com" style="color:#2563eb;text-decoration:none;">drex.haywards@gmail.com</a>
       </div>
     </div>
   </div>`;
