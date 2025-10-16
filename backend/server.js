@@ -5,8 +5,12 @@ import nodemailer from 'nodemailer';
 const app = express();
 // Prefer env var, fallback to previous default
 
+app.use(cors({
+  origin: ['https://fone-world.vercel.app'],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
-app.use(cors());
 // Increase JSON limit to allow base64 images from contact form
 app.use(express.json({ limit: '100mb' }));
 
@@ -192,8 +196,9 @@ app.post('/api/subscribe', async (req, res) => {
   }
 });
 
-app.listen(4001, () => {
-  console.log(`Server listening on http://localhost:${4001}`);
+app.listen(4001, () => { 
+  console.log(`Server listening on http://localhost:${4001}`); 
 });
+
 
 
