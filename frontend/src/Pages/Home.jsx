@@ -35,7 +35,7 @@ const Home = () => {
     }
     try {
       setIsSubmitting(true);
-      const resp = await fetch('https://foneworldbackend.vercel.app/api/contact', {
+      const resp = await fetch('https://foneworld-backend.vercel.app/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
