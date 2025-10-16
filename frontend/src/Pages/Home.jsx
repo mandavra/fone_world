@@ -4,8 +4,10 @@ import "aos/dist/aos.css";
 import Header from "../components/Header";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
+import { useNavigate, Link } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   const [contactName, setContactName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactPhone, setContactPhone] = useState("");
@@ -33,7 +35,7 @@ const Home = () => {
     }
     try {
       setIsSubmitting(true);
-      const resp = await fetch('https://foneworldbackend.vercel.app/api/contact', {
+      const resp = await fetch('http://localhost:4001/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -64,20 +66,22 @@ const Home = () => {
     }
   };
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden bg-white">
       <Header />
-      <main className="container mx-auto">
+      <main className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <section data-aos="fade-up" data-aos-delay="50" data-aos-duration="900" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-out-cubic">
           <Carousel />
         </section>
      
-        <section className="py-16 bg-white" data-aos="fade-up">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-10 sm:py-16 bg-white" data-aos="fade-up">
+          <div className="max-w-6xl mx-auto px-2 sm:px-4 lg:px-8">
             <div className="text-center animate-fade-in-up">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 leading-tight">
-                Mobile Repair Specialist in Hove
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight">
+                Mobile Repair Specialist in 00000
+
+                
               </h1>
-              <p className="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
                 DR.EX is the #1 repair shop in Hove. We specialize in
                 tech repair services for smartphones to laptops, major brands,
                 easy online booking, and a customer-first approach.
@@ -549,7 +553,10 @@ const Home = () => {
                 </div>
 
                 {/* Call to Action Button */}
-                <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <button
+                  className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  onClick={() => navigate('/contact-us#contact-form')}
+                >
                   Fix My Device
                 </button>
               </div>
@@ -654,12 +661,14 @@ const Home = () => {
               </p>
 
               {/* Call to Action Button */}
-              <button
-                className="bg-red-600 hover:bg-red-700 text-white px-10 py-5 rounded-lg text-2xl font-semibold transition-all duration-300 shadow-2xl hover:shadow-red-500/25 transform hover:-translate-y-2 animate-counter-up"
-                style={{ animationDelay: "0.4s" }}
-              >
-                Send Request
-              </button>
+              <Link to="/contact-us#contact-form" className="block w-full sm:w-auto">
+                <button
+                  className="bg-red-600 hover:bg-red-700 text-white w-full sm:w-auto px-5 sm:px-10 py-3 sm:py-5 rounded-lg text-lg sm:text-2xl font-semibold transition-all duration-300 shadow-none hover:shadow-none transform hover:-translate-y-2 animate-counter-up mb-9 "
+                  style={{ animationDelay: "0.4s" }}
+                >
+                  Send Request
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -698,74 +707,8 @@ const Home = () => {
               <div className="w-6 h-1 bg-gray-400 rounded-full shadow-lg transform rotate-12 animate-bounce"></div>
             </div>
 
-            {/* Phones with Gloved Hands */}
-            <div className="absolute bottom-20 left-1/4 animate-slide-in-up">
-              {/* Broken Phone with Gloved Hand */}
-              <div className="relative">
-                {/* Gloved Hand */}
-                <div className="absolute -bottom-4 -left-2 w-12 h-8 bg-gray-800 rounded-lg transform rotate-12 opacity-80"></div>
-                <div className="absolute -bottom-6 -left-4 w-8 h-6 bg-gray-700 rounded-lg transform rotate-45 opacity-60"></div>
+        
 
-                {/* Broken Phone */}
-                <div className="relative w-24 h-40 bg-gray-300 rounded-xl shadow-xl">
-                  {/* Screen */}
-                  <div className="absolute inset-2 bg-black rounded-lg overflow-hidden">
-                    {/* Spiderweb Crack Pattern */}
-                    <div className="absolute inset-0">
-                      {/* Main impact point */}
-                      <div className="absolute top-1/3 left-1/2 w-2 h-2 bg-white opacity-90 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-                      {/* Radiating cracks */}
-                      <div className="absolute top-1/3 left-1/2 w-0.5 h-1/2 bg-white opacity-70 transform -translate-x-1/2"></div>
-                      <div className="absolute top-1/3 left-1/2 w-1/2 h-0.5 bg-white opacity-70 transform -translate-x-1/2"></div>
-                      {/* Spiderweb pattern */}
-                      <div className="absolute top-1/3 left-1/2 w-0.5 h-1/3 bg-white opacity-60 transform -translate-x-1/2 rotate-45 origin-top"></div>
-                      <div className="absolute top-1/3 left-1/2 w-0.5 h-1/3 bg-white opacity-60 transform -translate-x-1/2 -rotate-45 origin-top"></div>
-                      <div className="absolute top-1/3 left-1/2 w-1/3 h-0.5 bg-white opacity-60 transform -translate-x-1/2 -translate-y-1/4 rotate-90"></div>
-                      {/* Additional cracks */}
-                      <div className="absolute top-1/4 left-1/4 w-0.5 h-1/2 bg-white opacity-40 transform rotate-30"></div>
-                      <div className="absolute top-1/2 right-1/4 w-0.5 h-1/3 bg-white opacity-50 transform -rotate-20"></div>
-                    </div>
-                  </div>
-                  {/* Home Button */}
-                  <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 border-2 border-gray-400 rounded-full"></div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="absolute bottom-20 right-1/4 animate-slide-in-up"
-              style={{ animationDelay: "0.3s" }}
-            >
-              {/* Intact Phone with Gloved Hand */}
-              <div className="relative">
-                {/* Gloved Hand */}
-                <div className="absolute -bottom-4 -right-2 w-12 h-8 bg-gray-800 rounded-lg transform -rotate-12 opacity-80"></div>
-                <div className="absolute -bottom-6 -right-4 w-8 h-6 bg-gray-700 rounded-lg transform -rotate-45 opacity-60"></div>
-
-                {/* Intact Phone */}
-                <div className="relative w-24 h-40 bg-gray-300 rounded-xl shadow-xl">
-                  {/* Screen */}
-                  <div className="absolute inset-2 bg-black rounded-lg flex items-center justify-center">
-                    {/* Simple checkmark or status indicator */}
-                    <div className="w-8 h-8 border-2 border-green-400 rounded-full flex items-center justify-center">
-                      <svg
-                        className="w-5 h-5 text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  {/* Home Button */}
-                  <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 border-2 border-gray-400 rounded-full"></div>
-                </div>
-              </div>
-            </div>
 
             {/* Floating Particles */}
             <div className="absolute top-1/4 left-1/3 w-2 h-2 bg-white opacity-20 rounded-full animate-ping"></div>
