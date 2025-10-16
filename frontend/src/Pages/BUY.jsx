@@ -85,7 +85,7 @@ const BUY = () => {
         message,
         submittedAt: new Date().toISOString(),
       };
-      const resp = await fetch('http://localhost:4001/api/sell', {
+      const resp = await fetch('https://foneworldbackend.vercel.app/api/sell', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
