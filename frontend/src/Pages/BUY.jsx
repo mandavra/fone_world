@@ -85,7 +85,7 @@ const BUY = () => {
         message,
         submittedAt: new Date().toISOString(),
       };
-      const resp = await fetch('https://foneworldbackend.vercel.app/api/sell', {
+      const resp = await fetch('http://localhost:4001/api/sell', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -439,7 +439,7 @@ const BUY = () => {
               <p className="mt-6 text-lg text-gray-800">
                 <span className="font-bold text-red-600">Notice:</span>
                 <span className="ml-2">You can see full details of all our services by</span>
-                <a href="/services" className="ml-2 font-semibold text-indigo-700 underline hover:text-indigo-800">clicking here</a>
+                <a href="/iphone-repair-service" className="ml-2 font-semibold text-indigo-700 underline hover:text-indigo-800">clicking here</a>
               </p>
 
               <div className="mt-10 rounded-3xl bg-red-600 text-white shadow-xl ring-1 ring-red-700/30">
@@ -453,7 +453,8 @@ const BUY = () => {
               </div>
 
               <p className="mt-10 text-2xl font-extrabold text-gray-900">
-                Address: 48 George St, Hove, BN3 3YB
+                Address: 17 South Road, Haywards Heath
+                RH64LE
               </p>
             </div>
           </div>
