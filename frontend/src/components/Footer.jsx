@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import LogoImage from "../assets/IMG_6658.PNG";
 
 const Footer = () => {
   return (
@@ -8,19 +10,14 @@ const Footer = () => {
           {/* Brand + About */}
           <div className="space-y-6 animate-fade-in-up">
             <div className="flex items-center space-x-2">
-              <span className="text-2xl font-extrabold tracking-wider text-white">
-                DR.
-              </span>
-              <svg
-                className="h-7 w-7 text-red-500"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <rect x="6" y="2" width="12" height="20" rx="3" />
-              </svg>
-              <span className="text-2xl font-extrabold tracking-wider text-white">
-                EX
-              </span>
+            <Link to="/" className="flex items-center">
+              <img
+                src={LogoImage}
+                alt="DR.EX Logo"
+                className="h-10 w-auto object-contain"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
+            </Link>
             </div>
             <p className="leading-relaxed">
               DR.EX was founded by an experienced team of technicians who know how
@@ -32,7 +29,7 @@ const Footer = () => {
               <p className="mb-3 font-semibold text-white">SOCIAL LINKS</p>
               <div className="flex items-center space-x-3">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/share/1PNjNdoGgZ/?mibextid=wwXIfr"
                   className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gray-700 text-white hover:bg-red-600 transition"
                 >
                   <svg
@@ -43,18 +40,7 @@ const Footer = () => {
                     <path d="M22 12.06C22 6.48 17.52 2 12 2S2 6.48 2 12.06C2 17.08 5.66 21.2 10.44 22v-7.03H7.9v-2.91h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22C18.34 21.2 22 17.08 22 12.06z" />
                   </svg>
                 </a>
-                <a
-                  href="#"
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gray-700 text-white hover:bg-red-600 transition"
-                >
-                  <svg
-                    className="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M22.23 5.924a5.6 5.6 0 01-1.607.441 2.807 2.807 0 001.232-1.548 5.62 5.62 0 01-1.78.68A2.802 2.802 0 0015.43 7.23a7.96 7.96 0 01-5.78-2.93 2.802 2.802 0 00.868 3.743 2.788 2.788 0 01-1.269-.35v.036a2.803 2.803 0 002.247 2.748 2.81 2.81 0 01-1.266.048 2.804 2.804 0 002.617 1.946A5.618 5.618 0 016 14.557a7.93 7.93 0 004.29 1.257c5.148 0 7.966-4.264 7.966-7.96 0-.121-.003-.243-.01-.363a5.68 5.68 0 001.384-1.567z" />
-                  </svg>
-                </a>
+               
                 <a
                   href="https://wa.me/447919933386"
                   target="_blank"
@@ -84,7 +70,7 @@ const Footer = () => {
                 const form = e.currentTarget;
                 const email = form.querySelector('input[name="subscribeEmail"]').value;
                 try {
-                  const resp = await fetch('https://foneworldbackend.vercel.app/api/subscribe', {
+                  const resp = await fetch('http://localhost:4001/api/subscribe', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email })
