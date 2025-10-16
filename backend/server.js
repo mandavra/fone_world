@@ -5,11 +5,30 @@ import nodemailer from 'nodemailer';
 const app = express();
 // Prefer env var, fallback to previous default
 
+// CORS: allow production site and local dev (Vite) origins
+const allowedOrigins = ['https://fone-world.vercel.app','http://localhost:5173'];
+const isProd = process.env.NODE_ENV === 'production';
+
 app.use(cors({
-  origin: ['https://fone-world.vercel.app'],
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true);
+    if (!isProd) return callback(null, true); // allow all in dev
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error('Not allowed by CORS'));
+  },
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+
+// Explicit OPTIONS handler for preflight
+app.options('*', cors(), (req, res) => {
+  res.sendStatus(204);
+});
+
+// Simple health endpoint
+app.get('/', (req, res) => {
+  res.json({ ok: true, service: 'backend', time: new Date().toISOString() });
+});
 
 // Increase JSON limit to allow base64 images from contact form
 app.use(express.json({ limit: '100mb' }));
