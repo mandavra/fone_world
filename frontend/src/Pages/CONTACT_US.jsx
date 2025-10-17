@@ -449,8 +449,6 @@
 // };
 
 
-
-
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import AOS from "aos";
@@ -466,10 +464,10 @@ const CONTACT_US = () => {
   const [imagePreviewUrl, setImagePreviewUrl] = useState("");
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [videoPreviewUrl, setVideoPreviewUrl] = useState("");
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || (window.location.hostname.includes('vercel.app') ? 'https://foneworld-backend.vercel.app' : 'http://localhost:4001');
   useEffect(() => {
     AOS.init({ duration: 900, once: false, offset: 90, easing: "ease-out-quart" });
   }, []);
-  const API_BASE = import.meta.env.VITE_API_BASE_URL || (window.location.hostname.includes('vercel.app') ? 'https://foneworld-backend.vercel.app' : 'http://localhost:4001');
   const location = useLocation();
   useEffect(() => {
     if (location && location.hash === "#contact-form") {
@@ -614,13 +612,17 @@ const CONTACT_US = () => {
                 // Optional image validation already performed on change; include if present
                 try {
                   setIsSubmitting(true);
-                  // In production, block large video payloads to avoid 413 on Vercel
                   const isProd = API_BASE.includes('https://');
-                  const videoPayload = isProd ? null : (selectedVideo ? {
-                    name: selectedVideo.name,
-                    type: selectedVideo.type,
-                    data: selectedVideo.data
-                  } : null);
+                  const approxBytesFromBase64 = (b64) => Math.floor((b64 ? b64.length : 0) * 0.75);
+                  const imageBytes = selectedImage ? approxBytesFromBase64(selectedImage.data) : 0;
+                  const videoBytes = selectedVideo ? approxBytesFromBase64(selectedVideo.data) : 0;
+                  const totalBytes = imageBytes + videoBytes;
+                  const maxTotal = isProd ? (4 * 1024 * 1024) : (25 * 1024 * 1024);
+                  if (totalBytes > maxTotal) {
+                    setSubmitError(isProd ? "Attachments too large. Total max ~4MB on live. Please compress or remove files." : "Attachments too large for this request.");
+                    setIsSubmitting(false);
+                    return;
+                  }
                   const resp = await fetch(`${API_BASE}/api/contact`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -634,7 +636,11 @@ const CONTACT_US = () => {
                         type: selectedImage.type,
                         data: selectedImage.data
                       } : null,
-                      video: videoPayload
+                      video: selectedVideo ? {
+                        name: selectedVideo.name,
+                        type: selectedVideo.type,
+                        data: selectedVideo.data
+                      } : null
                     })
                   });
                   const data = await resp.json().catch(() => ({}));
@@ -727,12 +733,6 @@ const CONTACT_US = () => {
                         setVideoPreviewUrl("");
                         return;
                       }
-                      const isProd = API_BASE.includes('https://');
-                      if (isProd) {
-                        setSubmitError("Video uploads are not supported on live site. Please send without video or share a link.");
-                        ev.target.value = "";
-                        return;
-                      }
                       const maxBytes = 20 * 1024 * 1024; // 20MB
                       const allowed = ["video/mp4", "video/quicktime", "video/x-msvideo"];
                       if (!allowed.includes(file.type)) {
@@ -780,9 +780,7 @@ const CONTACT_US = () => {
                         setImagePreviewUrl("");
                         return;
                       }
-                      const isProd = API_BASE.includes('https://');
-                      // Lower limit on live to avoid hitting Vercel body limit (~4.5MB)
-                      const maxBytes = isProd ? (2 * 1024 * 1024) : (5 * 1024 * 1024);
+                      const maxBytes = 5 * 1024 * 1024; // 5MB
                       const allowed = ["image/png", "image/jpeg", "image/jpg", "image/webp"];
                       if (!allowed.includes(file.type)) {
                         setSubmitError("Only PNG, JPG, JPEG or WEBP images are allowed.");
@@ -790,7 +788,7 @@ const CONTACT_US = () => {
                         return;
                       }
                       if (file.size > maxBytes) {
-                        setSubmitError(isProd ? "Image is too large. Max size is 2MB on live site." : "Image is too large. Max size is 5MB.");
+                        setSubmitError("Image is too large. Max size is 5MB.");
                         ev.target.value = "";
                         return;
                       }
@@ -799,14 +797,6 @@ const CONTACT_US = () => {
                         // reader.result is a data URL: data:<mime>;base64,<data>
                         const result = reader.result || "";
                         const base64Data = typeof result === 'string' ? result.split(',')[1] : "";
-                        // As an extra guard, enforce final payload size in prod (~base64 overhead ~33%)
-                        if (isProd && base64Data && base64Data.length > 2.8 * 1024 * 1024) {
-                          setSubmitError("Image after encoding is too large. Please choose a smaller image.");
-                          ev.target.value = "";
-                          setSelectedImage(null);
-                          setImagePreviewUrl("");
-                          return;
-                        }
                         setSelectedImage({ name: file.name, type: file.type, data: base64Data });
                         setImagePreviewUrl(typeof result === 'string' ? result : "");
                       };
@@ -922,6 +912,3 @@ const CONTACT_US = () => {
 };
 
 export default CONTACT_US;
-
-
-// export default CONTACT_US;
