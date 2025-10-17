@@ -448,7 +448,6 @@
 //   );
 // };
 
-
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import AOS from "aos";
@@ -462,8 +461,7 @@ const CONTACT_US = () => {
   const [submitSuccess, setSubmitSuccess] = useState("");
   const [selectedImage, setSelectedImage] = useState(null);
   const [imagePreviewUrl, setImagePreviewUrl] = useState("");
-  const [selectedVideo, setSelectedVideo] = useState(null);
-  const [videoPreviewUrl, setVideoPreviewUrl] = useState("");
+  
   const API_BASE = import.meta.env.VITE_API_BASE_URL || (window.location.hostname.includes('vercel.app') ? 'https://foneworld-backend.vercel.app' : 'http://localhost:4001');
   useEffect(() => {
     AOS.init({ duration: 900, once: false, offset: 90, easing: "ease-out-quart" });
@@ -615,14 +613,16 @@ const CONTACT_US = () => {
                   const isProd = API_BASE.includes('https://');
                   const approxBytesFromBase64 = (b64) => Math.floor((b64 ? b64.length : 0) * 0.75);
                   const imageBytes = selectedImage ? approxBytesFromBase64(selectedImage.data) : 0;
-                  const videoBytes = selectedVideo ? approxBytesFromBase64(selectedVideo.data) : 0;
-                  const totalBytes = imageBytes + videoBytes;
+                  let totalBytes = imageBytes;
                   const maxTotal = isProd ? (4 * 1024 * 1024) : (25 * 1024 * 1024);
-                  if (totalBytes > maxTotal) {
-                    setSubmitError(isProd ? "Attachments too large. Total max ~4MB on live. Please compress or remove files." : "Attachments too large for this request.");
+
+                  const imagePayload = selectedImage ? { name: selectedImage.name, type: selectedImage.type, data: selectedImage.data } : null;
+                  if (isProd && totalBytes > maxTotal) {
+                    setSubmitError('Attachments too large. Total max ~4MB on live. Please compress files and try again.');
                     setIsSubmitting(false);
                     return;
                   }
+
                   const resp = await fetch(`${API_BASE}/api/contact`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -631,16 +631,7 @@ const CONTACT_US = () => {
                       email,
                       phone,
                       message,
-                      image: selectedImage ? {
-                        name: selectedImage.name,
-                        type: selectedImage.type,
-                        data: selectedImage.data
-                      } : null,
-                      video: selectedVideo ? {
-                        name: selectedVideo.name,
-                        type: selectedVideo.type,
-                        data: selectedVideo.data
-                      } : null
+                      image: imagePayload
                     })
                   });
                   const data = await resp.json().catch(() => ({}));
@@ -653,8 +644,7 @@ const CONTACT_US = () => {
                   form.reset();
                   setSelectedImage(null);
                   setImagePreviewUrl("");
-                  setSelectedVideo(null);
-                  setVideoPreviewUrl("");
+                  
                 } catch (err) {
                   const msg = err instanceof Error ? err.message : 'Unknown error';
                   setSubmitError(`Something went wrong. ${msg}`);
@@ -717,53 +707,7 @@ const CONTACT_US = () => {
                     placeholder="Enter your message"
                   ></textarea>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Upload Video (optional)
-                  </label>
-                  <input
-                    type="file"
-                    accept="video/mp4,video/quicktime,video/x-msvideo"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    onChange={(ev) => {
-                      setSubmitError("");
-                      const file = ev.target.files && ev.target.files[0];
-                      if (!file) {
-                        setSelectedVideo(null);
-                        setVideoPreviewUrl("");
-                        return;
-                      }
-                      const maxBytes = 20 * 1024 * 1024; // 20MB
-                      const allowed = ["video/mp4", "video/quicktime", "video/x-msvideo"];
-                      if (!allowed.includes(file.type)) {
-                        setSubmitError("Only MP4, MOV, or AVI videos are allowed.");
-                        ev.target.value = "";
-                        return;
-                      }
-                      if (file.size > maxBytes) {
-                        setSubmitError("Video is too large. Max size is 20MB.");
-                        ev.target.value = "";
-                        return;
-                      }
-                      const reader = new FileReader();
-                      reader.onload = () => {
-                        const result = reader.result || "";
-                        const base64Data = typeof result === 'string' ? result.split(',')[1] : "";
-                        setSelectedVideo({ name: file.name, type: file.type, data: base64Data });
-                        setVideoPreviewUrl(typeof result === 'string' ? result : "");
-                      };
-                      reader.onerror = () => {
-                        setSubmitError("Failed to read the selected video.");
-                      };
-                      reader.readAsDataURL(file);
-                    }}
-                  />
-                  {videoPreviewUrl ? (
-                    <div className="mt-3">
-                      <video src={videoPreviewUrl} controls className="h-40 w-full max-w-xs rounded-md border" />
-                    </div>
-                  ) : null}
-                </div>
+                
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Upload Image (optional)
