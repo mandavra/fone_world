@@ -8,6 +8,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || (window.location.hostname.includes('vercel.app') ? 'https://foneworld-backend.vercel.app' : 'http://localhost:4001');
   const [contactName, setContactName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactPhone, setContactPhone] = useState("");
