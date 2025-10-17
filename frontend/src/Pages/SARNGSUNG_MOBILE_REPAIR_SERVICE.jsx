@@ -58,7 +58,7 @@ const Samsung_REPAIR_SERVICE = () => {
           <div>
               <img
                 className="w-full rounded-xl border border-gray-200 shadow-lg"
-                src="https://foneworld-hove.co.uk/wp-content/uploads/2025/08/Reliable-Screen-Battery-Repairs-1-1536x921.png"
+                  src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1600&auto=format&fit=crop"
                 alt="Technician holding smartphone with tools on desk"
                 loading="lazy"
               />
@@ -383,7 +383,7 @@ const Samsung_REPAIR_SERVICE = () => {
           <div>
             <img
               className="w-full rounded-xl border border-gray-200 shadow-lg"
-              src="https://foneworld-hove.co.uk/wp-content/uploads/2025/08/Reliable-Screen-Battery-Repairs-1-1536x921.png"
+              src="https://media.istockphoto.com/id/1333080956/photo/repair-of-electronic-devices-soldering-of-parts-multimeter.webp?s=2048x2048&w=is&k=20&c=DzOy5xzIBHYTNquC_jOOQQQjZ9tgEkDYh4ohmcy5aeQ="
               alt="Technician repairing Samsung on workstation"
               loading="lazy"
             />
@@ -441,7 +441,7 @@ const Samsung_REPAIR_SERVICE = () => {
           <div>
             <img
               className="w-full rounded-2xl border border-gray-200 shadow-lg"
-              src="https://foneworld-hove.co.uk/wp-content/uploads/2025/08/Reliable-Screen-Battery-Repairs-3-1536x921.png"
+              src="https://media.istockphoto.com/id/1125323600/photo/technician-repairing-broken-smartphone-on-desk.webp?s=2048x2048&w=is&k=20&c=y33VTTcuX220dkIvsoPhLGI-8SeRm9uniOXDJ4JWshg="
               alt="Technician with gloves holding smartphone during repair"
               loading="lazy"
             />
@@ -474,7 +474,7 @@ const Samsung_REPAIR_SERVICE = () => {
           <div className="hidden md:block">
             <img
               className="w-full max-w-sm rounded-xl opacity-95"
-              src="https://foneworld-hove.co.uk/wp-content/uploads/2025/06/laptop-home-2.webp"
+              src= "https://media.istockphoto.com/id/1536801548/vector/modern-laptop-mockup-front-view-and-smartphone-mockup-high-quality-isolated-on-white.webp?s=2048x2048&w=is&k=20&c=Et24uBf2LQ7CueBzYpOc3-XQWkLVSllG_jnrH77nDlg="
               alt="Devices on a desk"
               loading="lazy"
             />
@@ -589,7 +589,8 @@ const Samsung_REPAIR_SERVICE = () => {
           {/* Left: Samsung with cracked screen image */}
           <div className="flex-shrink-0 w-full md:w-1/3 flex justify-center mb-8 md:mb-0">
             <img
-              src="https://foneworld-hove.co.uk/wp-content/uploads/2025/07/ic.webp"
+               src="https://images.unsplash.com/photo-1706972612595-aa53b400ee80?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"
+
               alt="Cracked Samsung screen"
               className="w-40 h-72 object-cover rounded-2xl border-4 border-black bg-black"
               loading="lazy"

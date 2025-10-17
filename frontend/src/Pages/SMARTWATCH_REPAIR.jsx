@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Link } from 'react-router-dom'
 
 // Simple hook to trigger animations when elements enter the viewport
 const useInView = (options = { threshold: 0.15 }) => {
@@ -44,7 +45,7 @@ const SMARTWATCH_REPAIR = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=2070&auto=format&fit=crop')",
+                "url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=2070&auto=format&fit=crop')",
           }}
         />
 
@@ -86,7 +87,7 @@ const SMARTWATCH_REPAIR = () => {
           </AnimatedBlock>
           {/* Right Column */}
           <AnimatedBlock direction="right" delayMs={200} className="flex-1 flex justify-center p-0">
-            <img src="https://foneworld-hove.co.uk/wp-content/uploads/2025/09/Smart_Watch_Repair_in_Hove.png" alt="Laptop" className="max-w-md object-contain drop-shadow-2xl" />
+            <img src="https://media.istockphoto.com/id/1345812741/photo/white-fitness-tracker.jpg?s=612x612&w=0&k=20&c=JrVEAtnY50pnVtUN_gG4hEExZlOP606kQ7XWTEItzkM=" alt="Laptop" className="max-w-md object-contain drop-shadow-2xl" />
           </AnimatedBlock>
         </div>
       </section>
@@ -96,7 +97,7 @@ const SMARTWATCH_REPAIR = () => {
  <section className="w-full bg-white py-20 px-2 md:px-4 flex justify-center">
         <div className="max-w-7xl w-full flex flex-col md:flex-row items-center gap-10 pl-20">
         <AnimatedBlock direction="right" delayMs={200} className="flex-1 flex justify-center p-0">
-            <img src="https://foneworld-hove.co.uk/wp-content/uploads/2025/09/Professional_Smart_Watch_Repair_Services-removebg-preview-1-1.png" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
+            <img src="https://www.viranitelecom.com/wp-content/uploads/2021/10/apple-watch.png" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
           </AnimatedBlock>
           {/* Left Column */}
           <AnimatedBlock direction="left" delayMs={100} className="flex-1">
@@ -152,7 +153,7 @@ Our goal is to make sure you can continue using your smartwatch without interrup
           </AnimatedBlock>
           {/* Right Column */}
           <AnimatedBlock direction="right" delayMs={200} className="flex-1 flex justify-center p-0">
-            <img src="https://foneworld-hove.co.uk/wp-content/uploads/2025/09/Why_Choose_Fone_World_Hove_for_Smart_Watch_Repair__1___1_-removebg-preview.png" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
+            <img src="https://media.istockphoto.com/id/469328286/photo/smartwatch.jpg?s=612x612&w=0&k=20&c=Uns1U2fjc0M5DIzxW8qo8Wm_K7afxfNlwRWaiXs46PM=" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
           </AnimatedBlock>
         </div>
       </section>
@@ -162,7 +163,7 @@ Our goal is to make sure you can continue using your smartwatch without interrup
       <section className="w-full bg-white py-20 px-2 md:px-4 flex justify-center">
         <div className="max-w-7xl w-full flex flex-col md:flex-row items-center gap-10 pl-20">
         <AnimatedBlock direction="right" delayMs={200} className="flex-1 flex justify-center p-0">
-            <img src="https://foneworld-hove.co.uk/wp-content/uploads/2025/09/Why_Choose_Fone_World_Hove_for_Smart_Watch_Repair__2_-removebg-preview.png" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
+            <img src="https://media.istockphoto.com/id/486993228/photo/smart-watch.jpg?s=612x612&w=0&k=20&c=dVKA7YSTjnhzYAoYcxDwGEuV18QV-K-YuZCABnjt8pE=" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
           </AnimatedBlock>
           {/* Left Column */}
           <AnimatedBlock direction="left" delayMs={100} className="flex-1">

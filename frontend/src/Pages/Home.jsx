@@ -36,7 +36,7 @@ const Home = () => {
     }
     try {
       setIsSubmitting(true);
-      const resp = await fetch('https://foneworld-backend.vercel.app/api/contact', {
+      const resp = await fetch(`${API_BASE}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -129,7 +129,7 @@ const Home = () => {
               <div className="animate-slide-in-right" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="900">
                 <div className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-teal-900 rounded-2xl overflow-hidden shadow-2xl">
                     <img
-                      src="https://foneworld-hove.co.uk/wp-content/uploads/elementor/thumbs/Who-We-Are-1-r99xcj5ldee3j1sj5tqskxvu7pj9h5hfj56moonpu0.png"
+                      src="https://media.istockphoto.com/id/2163013393/photo/master-fixing-screen-on-digital-tablet.webp?s=2048x2048&w=is&k=20&c=57hB5XHgKKvszTfATdhcNyFQTNSTqu2aQ7RgidBpvNA="
                       alt="Who We Are"
                       className="w-full h-full object-cover transition-transform duration-700 will-change-transform hover:scale-[1.03]"
                     />
@@ -166,11 +166,11 @@ const Home = () => {
                 <div className="mb-6 flex justify-center">
                   <div className="relative w-24 h-32 bg-gradient-to-b from-blue-600 to-blue-800 rounded-2xl shadow-lg overflow-hidden transition-transform duration-500 will-change-transform hover:-translate-y-1 hover:shadow-xl">
                     {/* Phone Screen */}
-                    <img
-                      src="https://foneworld-hove.co.uk/wp-content/uploads/2025/07/phone-repair-1.png"
-                      alt="Phone Repair"
-                      className="w-full h-full object-cover"
-                    />
+                      <img
+                        src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                        alt="Phone Repair"
+                        className="w-full h-full object-cover"
+                      />
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-red-600 mb-4">
@@ -194,7 +194,7 @@ const Home = () => {
                   {/* <div className="relative w-28 h-20 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg shadow-lg overflow-hidden"> */}
                     {/* Tablet Screen */}
                     <img className="w-32 h-32 object-cover transition-transform duration-500 will-change-transform hover:-translate-y-1 hover:shadow-xl"
-                      src="https://foneworld-hove.co.uk/wp-content/uploads/2025/07/Tablet-Repair-2.png"
+                      src="https://media.istockphoto.com/id/2163013393/photo/master-fixing-screen-on-digital-tablet.webp?s=2048x2048&w=is&k=20&c=57hB5XHgKKvszTfATdhcNyFQTNSTqu2aQ7RgidBpvNA="
                       alt="Tablet Repair"
                     />
                   </div>
@@ -218,10 +218,10 @@ const Home = () => {
                 data-aos="flip-left" data-aos-delay="300" data-aos-duration="700"
               >
                 <div className="mb-6 flex justify-center">
-                <img className="w-32 h-32 object-cover transition-transform duration-500 will-change-transform hover:-translate-y-1 hover:shadow-xl"
-                src="https://foneworld-hove.co.uk/wp-content/uploads/2025/07/laptop-Repair.png"
-                alt="Laptop Repair"
-              />
+                  <img className="w-32 h-32 object-cover transition-transform duration-500 will-change-transform hover:-translate-y-1 hover:shadow-xl"
+                 src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                 alt="Laptop Repair"
+               />
                 </div> 
                 <h3 className="text-xl font-bold text-red-600 mb-4">
                   Laptop Repair
@@ -296,7 +296,7 @@ const Home = () => {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
           <div className="h-64 bg-gray-100 flex items-center justify-center relative overflow-hidden transition-transform duration-500 will-change-transform hover:-translate-y-1">
             <img
-              src="https://foneworld-hove.co.uk/wp-content/uploads/2025/07/Broken-screen-1.jpg"
+              src="https://media.istockphoto.com/id/623204582/photo/broken-mobile-phone-screen-scattered-shards.webp?s=2048x2048&w=is&k=20&c=h6w4dbpr9DjwErh-Scai99QC4Pnlb54zVCl7BCg0kx0="
               alt="Broken screen"
               className="h-full object-contain"
             />
@@ -312,7 +312,7 @@ const Home = () => {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
           <div className="h-64 bg-gray-100 flex items-center justify-center relative overflow-hidden transition-transform duration-500 will-change-transform hover:-translate-y-1">
             <img
-              src="https://foneworld-hove.co.uk/wp-content/uploads/2025/07/Water-damage-1-2.png"
+              src="https://media.istockphoto.com/id/950690084/photo/white-broken-smartphone-mock-up-fall-in-water-3d-rendering.webp?s=2048x2048&w=is&k=20&c=wzgD6s98DQ23A1dy6LZkOK94GySScPJE-W0m4jpQrx8="
               alt="Water damage"
               className="h-full object-contain"
             />
@@ -328,7 +328,7 @@ const Home = () => {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
           <div className="h-64 bg-gray-100 flex items-center justify-center relative overflow-hidden transition-transform duration-500 will-change-transform hover:-translate-y-1">
             <img
-              src="https://foneworld-hove.co.uk/wp-content/uploads/2025/07/Speaker-issues-1.jpg"
+              src= "https://sprtech.com.my/wp-content/uploads/2022/08/maxresdefault-5-400x400.jpg"
               alt="Speaker issues"
               className="h-full object-contain"
             />
@@ -380,7 +380,7 @@ const Home = () => {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
           <div className="h-64 bg-gray-100 flex items-center justify-center relative overflow-hidden transition-transform duration-500 will-change-transform hover:-translate-y-1">
             <img
-              src="https://foneworld-hove.co.uk/wp-content/uploads/2025/07/Damaged-or-dead-battery-1.jpg"
+              src="https://media.istockphoto.com/id/2183687699/photo/phone-battery-with-low-charge-cellphone-with-no-power-energy-drain-empty-load-and-dead.webp?s=612x612&w=is&k=20&c=-j1o_LxJcHWhLn6sVki53M8JukxSwhVMUEDHsYrQAFg="
               alt="Damaged or dead battery"
               className="h-full object-contain"
             />

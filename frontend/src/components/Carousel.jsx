@@ -30,7 +30,7 @@ const CarouselComponent = () => {
           {/* Background image */}
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url('https://foneworld-hove.co.uk/wp-content/uploads/2025/07/Smart-Phone-Repair-Service-1.jpg')` }}
+            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1600&auto=format&fit=crop')` }}
             data-aos="zoom-in"
           >
             <div className="absolute inset-0 bg-black/40"></div>
@@ -62,7 +62,8 @@ const CarouselComponent = () => {
           {/* Background image */}
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url('https://foneworld-hove.co.uk/wp-content/uploads/2025/07/Laptop-Repair-Service-1.jpg')` }}
+            style={{ backgroundImage: `url('https://media.istockphoto.com/id/625135580/photo/laptop-disassembling-with-screwdriver-at-repair.jpg?s=1024x1024&w=is&k=20&c=SRQy9lxXhn2mHAthxIRBht3HLCRc6os5lfrOgSj3TuA=')` }}
+
             data-aos="zoom-in"
           >
             <div className="absolute inset-0 bg-black/40"></div>
@@ -94,7 +95,7 @@ const CarouselComponent = () => {
           {/* Background image */}
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url('https://foneworld-hove.co.uk/wp-content/uploads/2025/07/Tablet-Repair-Service-1.jpg')` }}
+            style={{ backgroundImage: `url('https://plus.unsplash.com/premium_photo-1664299431263-e5183814706b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGFibGV0JTIwcmVwYWlyfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500')` }}
             data-aos="zoom-in"
           >
             <div className="absolute inset-0 bg-black/40"></div>
@@ -126,7 +127,7 @@ const CarouselComponent = () => {
           {/* Background image */}
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url('https://foneworld-hove.co.uk/wp-content/uploads/2025/07/Smartwatch-Repair-Service-fone-world-scaled-1.jpg')` }}
+            style={{ backgroundImage: `url('https://media.istockphoto.com/id/1183923464/photo/repairman-fixing-smartwatch.webp?s=2048x2048&w=is&k=20&c=5uh-0Fypqh17LVXpfQCZ6kExNPFvVJsRTPYsdokOMXE=')` }}
             data-aos="zoom-in"
           >
             <div className="absolute inset-0 bg-black/40"></div>

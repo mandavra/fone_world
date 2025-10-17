@@ -41,7 +41,7 @@ const TABLET_REPAIR = () => {
         className="relative flex items-center justify-center h-[350px] md:h-[89vh] bg-center bg-cover"
         style={{
           backgroundImage:
-            "url('https://foneworld-hove.co.uk/wp-content/uploads/2021/07/the-technician-repairs-a-broken-tablet-computer-in-QAJN83E-1.jpg')",
+            "url('https://www.kovaimobilestheservicecenter.com/assets/img/service/apple-iphone-tablet-01.webp')",
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
@@ -73,7 +73,7 @@ const TABLET_REPAIR = () => {
           </AnimatedBlock>
           {/* Right Column */}
           <AnimatedBlock direction="right" delayMs={200} className="flex-1 flex justify-center p-0">
-            <img src="https://foneworld-hove.co.uk/wp-content/uploads/2021/07/tablet.jpg" alt="Laptop" className="max-w-md object-contain drop-shadow-2xl" />
+            <img src="https://media.istockphoto.com/id/2163013393/photo/master-fixing-screen-on-digital-tablet.webp?s=2048x2048&w=is&k=20&c=57hB5XHgKKvszTfATdhcNyFQTNSTqu2aQ7RgidBpvNA=" alt="Laptop" className="max-w-md object-contain drop-shadow-2xl" />
           </AnimatedBlock>
         </div>
       </section>
@@ -83,7 +83,7 @@ const TABLET_REPAIR = () => {
  <section className="w-full bg-white py-20 px-2 md:px-4 flex justify-center">
         <div className="max-w-7xl w-full flex flex-col md:flex-row items-center gap-10 pl-20">
         <AnimatedBlock direction="right" delayMs={200} className="flex-1 flex justify-center p-0">
-            <img src="https://foneworld-hove.co.uk/wp-content/uploads/2025/07/Tablet-Repair-1.png" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
+            <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8VGFibGV0fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
           </AnimatedBlock>
           {/* Left Column */}
           <AnimatedBlock direction="left" delayMs={100} className="flex-1">
@@ -120,7 +120,7 @@ const TABLET_REPAIR = () => {
           </AnimatedBlock>
           {/* Right Column */}
           <AnimatedBlock direction="right" delayMs={200} className="flex-1 flex justify-center p-0">
-            <img src="https://foneworld-hove.co.uk/wp-content/uploads/2025/07/Tablet-Repair-2-1.png" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
+            <img src="https://images.unsplash.com/photo-1623126908029-58cb08a2b272?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8VGFibGV0fGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
           </AnimatedBlock>
         </div>
       </section>
@@ -130,7 +130,7 @@ const TABLET_REPAIR = () => {
       <section className="w-full bg-white py-20 px-2 md:px-4 flex justify-center">
         <div className="max-w-7xl w-full flex flex-col md:flex-row items-center gap-10 pl-20">
         <AnimatedBlock direction="right" delayMs={200} className="flex-1 flex justify-center p-0">
-            <img src="https://foneworld-hove.co.uk/wp-content/uploads/2021/07/tablet-1.jpg" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
+            <img src="https://images.unsplash.com/photo-1604399852419-f67ee7d5f2ef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fFRhYmxldHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
           </AnimatedBlock>
           {/* Left Column */}
           <AnimatedBlock direction="left" delayMs={100} className="flex-1">

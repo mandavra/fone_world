@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -41,7 +42,7 @@ const LAPTOP_REPAIR = () => {
       <section
         className="relative flex items-center justify-center h-[350px] md:h-[89vh] bg-center bg-cover"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1500&q=80')"
+          backgroundImage: "url('https://images.unsplash.com/photo-1658240527554-9cf987b4de49?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1032')"
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -73,7 +74,7 @@ const LAPTOP_REPAIR = () => {
           </AnimatedBlock>
           {/* Right Column */}
           <AnimatedBlock direction="right" delayMs={200} className="flex-1 flex justify-center p-0">
-            <img src="https://foneworld-hove.co.uk/wp-content/uploads/2021/05/laptop.png" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
+            <img src="https://images.unsplash.com/photo-1484788984921-03950022c9ef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8TGFwdG9wfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
           </AnimatedBlock>
         </div>
       </section>
@@ -85,7 +86,7 @@ const LAPTOP_REPAIR = () => {
           {/* Image Left */}
           <AnimatedBlock direction="left" delayMs={100} className="hidden md:block md:col-span-5">
             <img
-              src="https://foneworld-hove.co.uk/wp-content/uploads/2025/05/young-female-inventor-creating-her-workshop_23-2149067228.jpg"
+              src="https://media.istockphoto.com/id/1352410735/photo/pc-repair-service-computer-technician-service-with-laptop-on-hardware-technology-background.webp?a=1&s=612x612&w=0&k=20&c=VdfFWQ_UljyqSXgX8MAZmjYxPP2J2Hd5i_uK8mv4wUk="
               alt="Technician working in workshop"
               className="w-full h-auto rounded-2xl shadow-xl object-cover"
               loading="lazy"
@@ -165,7 +166,7 @@ const LAPTOP_REPAIR = () => {
           </AnimatedBlock>
           {/* Right Column */}
           <AnimatedBlock direction="right" delayMs={200} className="flex-1 flex justify-center p-0">
-            <img src="https://foneworld-hove.co.uk/wp-content/uploads/2021/05/laptop-1.jpg" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
+            <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
           </AnimatedBlock>
         </div>
       </section>
@@ -175,7 +176,7 @@ const LAPTOP_REPAIR = () => {
       <section className="w-full bg-white py-20 px-2 md:px-4 flex justify-center">
         <div className="max-w-7xl w-full flex flex-col md:flex-row items-center gap-10 pl-20">
         <AnimatedBlock direction="right" delayMs={200} className="flex-1 flex justify-center p-0">
-            <img src="https://foneworld-hove.co.uk/wp-content/uploads/2021/05/laptop-1.jpg" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
+            <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500" alt="Laptop" className="w-full max-w-md object-contain drop-shadow-2xl" />
           </AnimatedBlock>
           {/* Left Column */}
           <AnimatedBlock direction="left" delayMs={100} className="flex-1">
