@@ -138,11 +138,15 @@ const CONTACT_US = () => {
 
             {/* Email Contact */}
             <a 
-              href="mailto:drex.haywards@gmail.com" 
+              href="mailto:drex.haywards@gmail.com?subject=Contact%20from%20Website&body=Hello%2C%20I%20would%20like%20to%20contact%20you%20regarding..." 
               className="group flex flex-col items-center text-center p-8 bg-white border border-gray-200 rounded-2xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 ease-out transform hover:border-red-300 min-w-[320px] max-w-[240px] cursor-pointer" 
               data-aos="flip-left" 
               data-aos-delay="500" 
               data-aos-duration="700"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = "mailto:drex.haywards@gmail.com?subject=Contact%20from%20Website&body=Hello%2C%20I%20would%20like%20to%20contact%20you%20regarding...";
+              }}
             >
               <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 ease-out">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
