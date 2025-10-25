@@ -12,7 +12,7 @@ const CONTACT_US = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [imagePreviewUrl, setImagePreviewUrl] = useState("");
   
-  const API_BASE = import.meta.env.VITE_API_BASE_URL || (window.location.hostname.includes('vercel.app') ? 'https://foneworld-backend.vercel.app' : 'http://localhost:4001');
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || (window.location.hostname.includes('vercel.app') ? 'https://www.drexhaywards.com' : 'http://localhost:4001');
   useEffect(() => {
     AOS.init({ duration: 900, once: false, offset: 90, easing: "ease-out-quart" });
   }, []);
