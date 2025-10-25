@@ -179,8 +179,8 @@ const Home = () => {
                 <p className="text-gray-700 leading-relaxed">
                   Stressed you need a new phone or device because yours is
                   damaged? Not to worry, our technicians are here to help. If
-                    you're looking for trusted phone repair in Haywards Heath,
-                   Haywards Heath has you covered with expert solutions.
+                    you're looking for trusted phone repair in Haywards Heath, Fone
+                    World Haywards Heath has you covered with expert solutions.
                 </p>
               </div>
 
@@ -264,7 +264,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </section
+        </section>
 
         {/* Klarna Payment Section */}
       
