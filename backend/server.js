@@ -60,8 +60,8 @@ function renderEmail(title, rows) {
 }
 
 // Configure transporter with Gmail credentials via env vars
-const gmailUser = 'mandavra12@gmail.com';
-const gmailPass =  'qniq bysx gggh npyn'.replace(/\s+/g, '');
+const gmailUser = 'drex.haywards@gmail.com';
+const gmailPass =  'marl vqux mvxo tknn'.replace(/\s+/g, '');
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
@@ -218,6 +218,7 @@ app.post('/api/subscribe', async (req, res) => {
 app.listen(4001, () => { 
   console.log(`Server listening on http://localhost:${4001}`); 
 });
+
 
 
 
