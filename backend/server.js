@@ -228,7 +228,7 @@ const app = express();
 // Prefer env var, fallback to previous default
 
 // CORS: allow production site and local dev (Vite) origins
-const allowedOrigins = ['https://fone-world.vercel.app','http://localhost:5173','https://www.drexhaywards.com'];
+const allowedOrigins = ['https://fone-world.vercel.app','http://localhost:5173'];
 const isProd = process.env.NODE_ENV === 'production';
 
 app.use(cors({
@@ -444,6 +444,7 @@ app.post('/api/subscribe', async (req, res) => {
 app.listen(4001, () => { 
   console.log(`Server listening on http://localhost:${4001}`); 
 });
+
 
 
 
