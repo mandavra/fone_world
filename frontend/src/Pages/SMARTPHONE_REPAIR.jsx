@@ -140,7 +140,7 @@ Here at Dr.ex Haywards Heath, we offer smartphone repair services for almost eve
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Visit Our Smartphone Repairing Shop Today! 
             </h2>
             <p className="text-lg mb-6">
-            Looking for a reliable smartphone repairing shop in Hove and Haywards Heath? Look no further! Fone World Hove is here to provide top-notch repair services, from complete smartphone repair in Hove to quick fixes. Our team is dedicated to getting your device back in perfect condition.
+            Looking for a reliable smartphone repairing shop in Hove and Haywards Heath? Look no further!  Hove is here to provide top-notch repair services, from complete smartphone repair in Hove to quick fixes. Our team is dedicated to getting your device back in perfect condition.
             <br></br>      <br></br>     <br></br>
             <p>Get in touch or visit us today to experience the best in smartphone repairs!</p>
             </p>
