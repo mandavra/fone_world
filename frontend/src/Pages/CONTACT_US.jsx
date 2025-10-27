@@ -221,6 +221,7 @@ const CONTACT_US = () => {
                       email,
                       phone,
                       message,
+                      model,
                       image: imagePayload
                     })
                   });
