@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import AOS from "aos";
@@ -159,8 +160,7 @@ const CONTACT_US = () => {
           </div>
         </div>
       </section>
-
-      {/* Contact Information Section */}
+    {/* Contact Information Section */}
       <section className="py-16 bg-gray-50" data-aos="fade-up" data-aos-delay="100" data-aos-duration="900">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
@@ -186,6 +186,7 @@ const CONTACT_US = () => {
                 const name = form.querySelector('input[name="fullName"]').value.trim();
                 const email = form.querySelector('input[name="email"]').value.trim();
                 const phone = form.querySelector('input[name="phone"]').value.trim();
+                const model = form.querySelector('input[name="model"]').value.trim();
                 const message = form.querySelector('textarea[name="msg"]').value.trim();
                 // Basic validation
                 if (!name || !email || !message) {
@@ -272,6 +273,7 @@ const CONTACT_US = () => {
                   </label>
                   <input
                     type="text"
+                    name="model"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Enter your make & model"
                   />
@@ -425,6 +427,7 @@ const CONTACT_US = () => {
           </div>
         </div>
       </section>
+   
       <section className=" bg-white" data-aos="fade-up" data-aos-delay="100" data-aos-duration="900">
         <div className="">
           <div className="rounded-2xl overflow-hidden shadow-2xl animate-slide-in-up transition-transform duration-700 will-change-transform hover:-translate-y-1">
