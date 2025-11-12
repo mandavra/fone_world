@@ -19,11 +19,11 @@ const Footer = () => {
               />
             </Link>
             </div>
-            <p className="leading-relaxed">
+            {/* <p className="leading-relaxed">
               DR.EX was founded by an experienced team of technicians who know how
               to get any modern PC or gadget working the right way. With over 6
               years of expertise, you can always trust us.
-            </p>
+            </p> */}
 
             <div>
               <p className="mb-3 font-semibold text-white">SOCIAL LINKS</p>
@@ -119,7 +119,7 @@ const Footer = () => {
                 </ul>
               </div>
               {/* Services */}
-              <div className="animate-fade-in-up">
+              {/* <div className="animate-fade-in-up">
                 <p className="mb-4 text-xl font-semibold text-white">
                   SERVICES
                 </p>
@@ -133,7 +133,7 @@ const Footer = () => {
                       <a href="#">{item}</a>
                     </li>
                   ))}
-                </ul>
+                </ul> */}
               </div>
               {/* Contact */}
               <div className="animate-fade-in-up">
