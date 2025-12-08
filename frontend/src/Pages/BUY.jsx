@@ -39,6 +39,7 @@ const BUY = () => {
   ], []);
 
   const [sellerName, setSellerName] = useState("");
+  const [sellerEmail, setSellerEmail] = useState("");
   const [sellerPhone, setSellerPhone] = useState("");
   const [brand, setBrand] = useState("");
   const [model, setModel] = useState("");
@@ -68,7 +69,7 @@ const BUY = () => {
 
   const handleSellSubmit = async (event) => {
     event.preventDefault();
-    if (!sellerName || !sellerPhone || !brand || !model || !condition) {
+    if (!sellerName || !sellerEmail || !sellerPhone || !brand || !model || !condition) {
       alert("Please fill in all required fields.");
       return;
     }
@@ -76,6 +77,7 @@ const BUY = () => {
     try {
       const payload = {
         sellerName,
+        sellerEmail,
         sellerPhone,
         brand,
         model,
@@ -85,7 +87,7 @@ const BUY = () => {
         message,
         submittedAt: new Date().toISOString(),
       };
-      const resp = await fetch('https://foneworld-backend.vercel.app/api/sell', {
+      const resp = await fetch('http://localhost:3001/api/sell', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -94,6 +96,7 @@ const BUY = () => {
       if (data.ok) {
         alert("Thanks! We will contact you shortly.");
         setSellerName("");
+        setSellerEmail("");
         setSellerPhone("");
         setBrand("");
         setModel("");
@@ -320,11 +323,24 @@ const BUY = () => {
             <form onSubmit={handleSellSubmit} className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="col-span-1">
                 <label className="block text-sm font-medium text-gray-700">Your Name<span className="text-red-500">*</span></label>
+                
                 <input
                   type="text"
                   value={sellerName}
                   onChange={(e) => setSellerName(e.target.value)}
                   placeholder="Enter your full name"
+                  className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
+                  required
+                />
+              </div>
+
+              <div className="col-span-1">
+                <label className="block text-sm font-medium text-gray-700">Email<span className="text-red-500">*</span></label>
+                <input
+                  type="email"
+                  value={sellerEmail}
+                  onChange={(e) => setSellerEmail(e.target.value)}
+                  placeholder="you@example.com"
                   className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
                   required
                 />
@@ -395,7 +411,7 @@ const BUY = () => {
               </div>
 
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700">Expected Price </label>
+                <label className="block text-sm font-medium text-gray-700">Expected Price   </label>
                 <input
                   type="number"
                   min="0"
