@@ -1,4 +1,3 @@
-
 import express from 'express';
 import cors from 'cors';
 import nodemailer from 'nodemailer';
@@ -180,20 +179,21 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-
 app.post('/api/sell', async (req, res) => {
   try {
-    const { sellerName, sellerPhone, brand, model, storage, condition, expectedPrice, message } = req.body || {};
-    if (!sellerName || !sellerPhone || !brand || !model || !condition) {
+    const { sellerName, sellerEmail, sellerPhone, brand, model, storage, condition, expectedPrice, message } = req.body || {};
+    if (!sellerName || !sellerEmail || !sellerPhone || !brand || !model || !condition) {
       return res.status(400).json({ ok: false, error: 'Missing required fields' });
     }
     const mail = await transporter.sendMail({
       from: `Sell Form <${gmailUser}>`,
       to: gmailUser,
       subject: 'New sell request',
-      text: `Seller: ${sellerName}\nPhone: ${sellerPhone}\nBrand: ${brand}\nModel: ${model}\nStorage: ${storage || '-'}\nCondition: ${condition}\nExpected Price: ${expectedPrice || '-'}\n\nMessage:\n${message || '-'}`,
+      replyTo: sellerEmail,
+      text: `Seller: ${sellerName}\nEmail: ${sellerEmail}\nPhone: ${sellerPhone}\nBrand: ${brand}\nModel: ${model}\nStorage: ${storage || '-'}\nCondition: ${condition}\nExpected Price: ${expectedPrice || '-'}\n\nMessage:\n${message || '-'}`,
       html: renderEmail('New sell request', [
         ['Seller', sellerName],
+        ['Email', sellerEmail],
         ['Phone', sellerPhone],
         ['Brand', brand],
         ['Model', model],
@@ -244,7 +244,7 @@ app.post('/api/subscribe', async (req, res) => {
 
 // Only start listening when running locally, not on Vercel
 if (!process.env.VERCEL) {
-  const port = process.env.PORT || 4001;
+  const port = process.env.PORT || 3001;
   app.listen(port, () => { 
     console.log(`Server listening on http://localhost:${port}`); 
   });
@@ -252,7 +252,4 @@ if (!process.env.VERCEL) {
 
 // Export for Vercel serverless - use module.exports for CommonJS compatibility
 export default app;
-
-
-
 
