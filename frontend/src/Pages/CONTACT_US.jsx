@@ -84,7 +84,7 @@ const CONTACT_US = () => {
 
             {/* WhatsApp Contact */}
             <a 
-              href="https://wa.me/447883537792" 
+              href="https://wa.me/447919933386"  
               target="_blank" 
               rel="noopener noreferrer"
               className="group flex flex-col items-center text-center p-8 bg-white border border-gray-200 rounded-2xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 ease-out transform hover:border-red-300 min-w-[220px] max-w-[240px] cursor-pointer" 
