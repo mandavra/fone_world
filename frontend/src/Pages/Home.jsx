@@ -4,10 +4,16 @@ import "aos/dist/aos.css";
 import Header from "../components/Header";
 import Carousel from "../components/Carousel";
 import Footer from "../components/Footer";
-import { useNavigate, Link } from "react-router-dom";
+import CONTACT_US from "./CONTACT_US";
+
+const scrollToContactForm = () => {
+  const el = document.getElementById("contact-form");
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
 
 const Home = () => {
-  const navigate = useNavigate();
   const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://foneworld-backend.vercel.app';
   const [contactName, setContactName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
@@ -71,9 +77,8 @@ const Home = () => {
       <Header />
       <main className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <section data-aos="fade-up" data-aos-delay="50" data-aos-duration="900" data-aos-anchor-placement="top-bottom" data-aos-easing="ease-out-cubic">
-          <Carousel />
+          <Carousel onGetQuote={scrollToContactForm} />
         </section>
-     
         <section className="py-10 sm:py-16 bg-white" data-aos="fade-up">
           <div className="max-w-6xl mx-auto px-2 sm:px-4 lg:px-8">
             <div className="text-center animate-fade-in-up">
@@ -90,6 +95,8 @@ const Home = () => {
             </div>
           </div>
         </section>
+        
+        <CONTACT_US />     
 
         {/* Who We Are Section */}
         <section className="py-20 bg-gray-50" data-aos="fade-up">
@@ -555,8 +562,9 @@ const Home = () => {
 
                 {/* Call to Action Button */}
                 <button
+                  type="button"
                   className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-xl font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                  onClick={() => navigate('/contact-us#contact-form')}
+                  onClick={scrollToContactForm}
                 >
                   Fix My Device
                 </button>
@@ -662,14 +670,14 @@ const Home = () => {
               </p>
 
               {/* Call to Action Button */}
-              <Link to="/contact-us#contact-form" className="block w-full sm:w-auto">
-                <button
-                  className="bg-red-600 hover:bg-red-700 text-white w-full sm:w-auto px-5 sm:px-10 py-3 sm:py-5 rounded-lg text-lg sm:text-2xl font-semibold transition-all duration-300 shadow-none hover:shadow-none transform hover:-translate-y-2 animate-counter-up mb-9 "
-                  style={{ animationDelay: "0.4s" }}
-                >
-                  Send Request
-                </button>
-              </Link>
+              <button
+                type="button"
+                onClick={scrollToContactForm}
+                className="bg-red-600 hover:bg-red-700 text-white w-full sm:w-auto px-5 sm:px-10 py-3 sm:py-5 rounded-lg text-lg sm:text-2xl font-semibold transition-all duration-300 shadow-none hover:shadow-none transform hover:-translate-y-2 animate-counter-up mb-9 "
+                style={{ animationDelay: "0.4s" }}
+              >
+                Send Request
+              </button>
             </div>
           </div>
 

@@ -24,7 +24,7 @@ function App() {
         <Route path="/buy-sell" element={<BUY />} />
         <Route path="/blog" element={<BLOG />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
-        <Route path="/contact-us" element={<CONTACT_US />} />
+        {/* <Route path="/contact-us" element={<CONTACT_US />} /> */}
         <Route path="/smartphone-repair" element={<SMARTPHONE_REPAIR />} />
         <Route path="/laptop-repair" element={<LAPTOP_REPAIR />} />
         <Route path="/tablet-repair" element={<TABLET_REPAIR />} />
