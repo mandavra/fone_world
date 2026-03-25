@@ -29,8 +29,6 @@ const CONTACT_US = () => {
   }, [location]);
   return (
     <>
-      <Header />
-      
       {/* Hero Section */}
       <section className="relative flex items-center justify-center min-h-[40vh] md:min-h-[60vh] lg:min-h-[80vh] bg-center bg-cover" data-aos="fade-up" data-aos-delay="50" data-aos-duration="900" data-aos-anchor-placement="top-bottom">
         {/* Background Image */}
@@ -165,7 +163,7 @@ const CONTACT_US = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div id="contact-form" className="bg-white p-8 rounded-lg shadow-lg" data-aos="fade-right" data-aos-delay="150" data-aos-duration="800">
+            <div id="contact-form" className="scroll-mt-24 bg-white p-8 rounded-lg shadow-lg" data-aos="fade-right" data-aos-delay="150" data-aos-duration="800">
               <h2 className="text-3xl font-bold mb-6 text-gray-800">Contact Us Today</h2>
               {submitSuccess && (
                 <div className="mb-4 rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-green-800">
@@ -428,23 +426,7 @@ const CONTACT_US = () => {
         </div>
       </section>
    
-      <section className=" bg-white" data-aos="fade-up" data-aos-delay="100" data-aos-duration="900">
-        <div className="">
-          <div className="rounded-2xl overflow-hidden shadow-2xl animate-slide-in-up transition-transform duration-700 will-change-transform hover:-translate-y-1">
-            <div className="relative w-full aspect-[16/9] md:aspect-[21/9]">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2511.099031711847!2d-0.1009489!3d50.9958421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48758ca379d35081%3A0x78f1210f4f677afc!2sDR.EX%20-%20Mobile%2C%20iPad%2C%20Macbook%2C%20Tablet%20%26%20More%20Tech%20Repair%20Services!5e0!3m2!1sen!2sin!4v1760530625090!5m2!1sen!2sin"
-                className="absolute inset-0 h-full w-full border-0"
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Dr.ex Haywards HeathLocation"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-      <Footer />
+
     </>
   );
 };

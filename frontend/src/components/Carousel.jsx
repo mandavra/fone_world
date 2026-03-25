@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-const CarouselComponent = () => {
+const CarouselComponent = ({ onGetQuote }) => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -45,9 +45,13 @@ const CarouselComponent = () => {
               <p className="text-base sm:text-lg md:text-2xl text-white mb-6 sm:mb-8 font-light max-w-prose">
                 Get It Fixed at Turbo Speed!
               </p>
-              <a href="/contact-us#contact-form" className="inline-block bg-teal-700 border-2 border-white text-white px-5 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg md:text-xl font-semibold hover:bg-teal-600 transition-colors">
-             Get a Quote
-              </a>
+              <button
+                type="button"
+                onClick={() => onGetQuote?.()}
+                className="inline-block bg-teal-700 border-2 border-white text-white px-5 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg md:text-xl font-semibold hover:bg-teal-600 transition-colors"
+              >
+                Get a Quote
+              </button>
             </div>
           </div>
 
@@ -78,9 +82,13 @@ const CarouselComponent = () => {
               <p className="text-base sm:text-lg md:text-2xl text-white mb-6 sm:mb-8 font-light max-w-prose">
                 Get It Fixed at Turbo Speed!
               </p>
-              <a href="/contact-us#contact-form" className="inline-block bg-teal-700 border-2 border-white text-white px-5 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg md:text-xl font-semibold hover:bg-teal-600 transition-colors">
-             Get a Quote
-              </a>
+              <button
+                type="button"
+                onClick={() => onGetQuote?.()}
+                className="inline-block bg-teal-700 border-2 border-white text-white px-5 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg md:text-xl font-semibold hover:bg-teal-600 transition-colors"
+              >
+                Get a Quote
+              </button>
             </div>
           </div>
 
@@ -110,9 +118,13 @@ const CarouselComponent = () => {
               <p className="text-base sm:text-lg md:text-2xl text-white mb-6 sm:mb-8 font-light max-w-prose">
                 Get It Fixed at Turbo Speed!
               </p>
-              <a href="/contact-us#contact-form" className="inline-block bg-teal-700 border-2 border-white text-white px-5 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg md:text-xl font-semibold hover:bg-teal-600 transition-colors">
-             Get a Quote
-              </a>
+              <button
+                type="button"
+                onClick={() => onGetQuote?.()}
+                className="inline-block bg-teal-700 border-2 border-white text-white px-5 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg md:text-xl font-semibold hover:bg-teal-600 transition-colors"
+              >
+                Get a Quote
+              </button>
             </div>
           </div>
 
@@ -142,9 +154,13 @@ const CarouselComponent = () => {
               <p className="text-base sm:text-lg md:text-2xl text-white mb-6 sm:mb-8 font-light max-w-prose">
                 Get It Fixed at Turbo Speed!
               </p>
-              <a href="/contact-us#contact-form" className="inline-block bg-teal-700 border-2 border-white text-white px-5 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg md:text-xl font-semibold hover:bg-teal-600 transition-colors">
-             Get a Quote
-              </a>
+              <button
+                type="button"
+                onClick={() => onGetQuote?.()}
+                className="inline-block bg-teal-700 border-2 border-white text-white px-5 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg md:text-xl font-semibold hover:bg-teal-600 transition-colors"
+              >
+                Get a Quote
+              </button>
             </div>
           </div>
 
