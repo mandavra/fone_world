@@ -185,10 +185,7 @@ const BUY = () => {
                   <p>Fill the form below to get a quote or call us via:</p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="text-3xl font-bold text-red-600">Phone: 01444616060</span>
-                </div><br />
-                <div className="flex items-center gap-4">
-                  <span className="text-3xl font-bold text-red-600">WhatsApp: +44 7919 933386</span>
+                  <span className="text-3xl font-bold text-red-600">Phone / WhatsApp: +44 7919 933386</span>
                 </div>
               </div>
 
@@ -464,9 +461,8 @@ const BUY = () => {
               <div className="mt-10 rounded-3xl bg-red-600 text-white shadow-xl ring-1 ring-red-700/30">
                 <div className="mx-auto max-w-5xl px-6 py-10 sm:py-12">
                   <div className="grid grid-cols-1 gap-6 text-center sm:grid-cols-3">
-                    <div className="text-xl sm:text-2xl font-extrabold">Phone: 01444616060</div>
                     <div className="text-xl sm:text-2xl font-extrabold break-all">Email: drex.haywards@gmail.com</div>
-                    <div className="text-xl sm:text-2xl font-extrabold">Whatsapp: +44 7919 933386</div>
+                    <div className="text-xl sm:text-2xl font-extrabold">Phone / Whatsapp: +44 7919 933386</div>
                   </div>
                 </div>
               </div>
